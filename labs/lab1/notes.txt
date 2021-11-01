@@ -1,1 +1,0 @@
-text.js =>  => 01010101001 (executable code)

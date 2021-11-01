@@ -1,14 +1,17 @@
 "use strict";
 // -------------------------------- Version 1 --------------------------------
 let devFactory = function(name, salary){
-    // YOUR CODE HERE
     let obj = {};
     let _name = name
     let _salary = salary;
 
     // Set methods
-    obj.setName = function(_name) { (_name.length <= 1) ? (console.log('can not have 1 letter name')) : (_name = _name); };
-    obj.setSalary = function(_salary) { (_salary != 0) ? (_salary = _salary) : ( _salary = 0); };
+    obj.setName = function(_name) {
+        (_name.length <= 1) ? (console.log('can not have 1 letter name')) :
+            (_name = _name); };
+    obj.setSalary = function(_salary) {
+        (_salary != 0) ? (_salary = _salary) :
+            ( _salary = 0); };
 
     // Get methods
     obj.getName   = function() { return _name;   }
@@ -17,7 +20,7 @@ let devFactory = function(name, salary){
     // Increase salary method
     obj.increaseSalary = function(incrValue, pass) {
         (pass == 'abracadabra') ? _salary = obj.getSalary() + incrValue :
-        console.log(`Wrong password! ${obj.getName()} salary will not be increased!`);
+            console.log(`Wrong password! ${obj.getName()} salary will not be increased!`);
     }
 
 	return obj;
@@ -34,13 +37,17 @@ class Person {
     }
 
     // Set methods
-    setName(name) { (name.length <= 1) ? (console.log('can not have 1 letter name')) : (this.#name = name); };
-    setSalary(salary) { (salary != 0) ? (this.#salary = salary) : (this.#salary = 0); };
+    setName(name) {
+        (name.length <= 1) ? (console.log('can not have 1 letter name')) :
+            (this.#name = name); };
+    setSalary(salary) {
+        (salary != 0) ? (this.#salary = salary) :
+            (this.#salary = 0); };
 
     // Increase salary method
     increaseSalary(incrValue, pass) {
         (pass == 'abracadabra') ? (this.#salary = this.getSalary() + incrValue) : 
-        (console.log(`Wrong password! ${this.getName()} salary will not be increased!`));
+            (console.log(`Wrong password! ${this.getName()} salary will not be increased!`));
     }
 
     // Get methods

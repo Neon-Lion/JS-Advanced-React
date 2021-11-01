@@ -1,66 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>DOM_travers </title>
-</head>
-<body>
-	<p>Find all HTML elements with class="red", in any HTML document - recursive soluttion</p>
-	<hr>
-	<ul>
-	<li>Item</li>
-	<li>Item</li>
-	<li class="red">Make me red</li>
-	<li>Item
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>DOM_travers </title>
+	</head>
+	<body>
+		<p>Find all HTML elements with class="red", in any HTML document - recursive soluttion</p>
+		<hr>
 		<ul>
-		<li class="red">Make me red, too</li>
+		<li>Item</li>
+		<li>Item</li>
+		<li class="red">Make me red</li>
+		<li>Item
+			<ul>
+			<li class="red">Make me red, too</li>
+			</ul>
+		</li>
+		<li>Item</li>
 		</ul>
-	</li>
-	<li>Item</li>
-	</ul>
-	<script>
-		function do_something(node) {
-			node.style.color = "red";
-		}
-		function foo(node) {
-			if(node.className === "red"){
-				do_something(node)
+		<script>
+			function do_something(node) {
+				node.style.color = "red";
+			}
+			function foo(node) {
+				if(node.className === "red"){
+					do_something(node)
+				}
+
+				// for each node.children:
+				// 	foo(node)
+				const children = node.children;
+				for (let i = 0; i < children.length; i++) {
+					const node = children[i];
+					foo(node)
+				}
+
 			}
 
-			// for each node.children:
-			// 	foo(node)
-			const children = node.children;
-			for (let i = 0; i < children.length; i++) {
-				const node = children[i];
-				foo(node)
+			foo(document.body)
+
+			function traverseDOM(node) {
+				// recursion exit condition:
+				if (!node) {
+						return;
+				}
+
+				//*** the do what we want to do part ***//
+				if (node.className == "red") {
+						node.style.color = "red";
+				}
+
+				//*** the recursion (traverse) part ***//
+				let childrens = node.children;
+				// do the same for each children
+				for (let i = 0, len = childrens.length; i < len; i++) {
+						traverseDOM(childrens[i]);
+				}
 			}
 
-		}
+			// traverseDOM(document.body);
 
-		foo(document.body)
-
-		function traverseDOM(node) {
-			// recursion exit condition:
-			if (!node) {
-					return;
-			}
-
-			//*** the do what we want to do part ***//
-			if (node.className == "red") {
-					node.style.color = "red";
-			}
-
-			//*** the recursion (traverse) part ***//
-			let childrens = node.children;
-			// do the same for each children
-			for (let i = 0, len = childrens.length; i < len; i++) {
-					traverseDOM(childrens[i]);
-			}
-		}
-
-		// traverseDOM(document.body);
-
-	</script>
-</body>
+		</script>
+	</body>
 </html>
