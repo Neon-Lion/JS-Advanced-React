@@ -4,10 +4,10 @@ var car = {
     speed: 100,
     drive: function () {
         if (this.wings >= 2) {
-            console.log(`Flying wiht ${this.speed} km/h`);
+            console.log(`Flying with ${this.speed} km/h.`);
         }
         else {
-            console.log(`Driving wiht ${this.speed} km/h`);
+            console.log(`Driving with ${this.speed} km/h.`);
         }
     }
 };

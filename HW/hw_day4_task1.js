@@ -6,13 +6,13 @@ const counter = {
 		this.currentCount++;
 		console.log(this.currentCount);
 	}
-}
+};
 
 // ------------------------------------- Version 1 - Use a wrapping function -------------------------------------
 // ------------------------------------- Version 1.1 -------------------------------------------------------------
 function countdownByOneSec(times) {
 	const delay = 1000;
-	let x = function () { counter.tick() }
+	let x = function () { counter.tick() };
 	
 	while(times) {
 		setTimeout(x, delay * times);

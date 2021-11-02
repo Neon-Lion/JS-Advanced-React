@@ -9,7 +9,7 @@ var constructedCar = new CarConstructor();
 constructedCar.sayHello();
 // Hello from CarConstructor.prototype
 // ----------------------------------------------------------------------------------------------------------
-var Car = function(manufacturer, speed){
+var Car = function(manufacturer, speed) {
   this.manufacturer = manufacturer || undefined;
   this.speed = speed || 100;
 };

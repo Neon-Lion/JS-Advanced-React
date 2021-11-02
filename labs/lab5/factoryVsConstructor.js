@@ -1,7 +1,7 @@
 function CarConstructor(){};
 
 CarConstructor.prototype.sayHello=function () {
-  console.log(`Hello from CarConstructor.prototype`);
+  console.log(`Hello from CarConstructor.prototype.`);
 }
 // creating objects with Constructor will set the "__proto__" to the Constructor.prototype
 var constructedCar = new CarConstructor();
@@ -14,7 +14,7 @@ function CarFactory(){
 };
 
 CarFactory.prototype.sayHello = function () {
-  console.log(`Hello from CarFactory.prototype`);
+  console.log(`Hello from CarFactory.prototype.`);
 };
 
 // creating objects with factory will NOT set the "__proto__" to the Factory.prototype

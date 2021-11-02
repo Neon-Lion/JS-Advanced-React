@@ -14,14 +14,14 @@ let devFactory = function(name, salary){
             ( _salary = 0); };
 
     // Get methods
-    obj.getName   = function() { return _name;   }
-    obj.getSalary = function() { return _salary; }
+    obj.getName   = function () { return _name;   };
+    obj.getSalary = function () { return _salary; };
 
     // Increase salary method
     obj.increaseSalary = function(incrValue, pass) {
         (pass == 'abracadabra') ? _salary = obj.getSalary() + incrValue :
             console.log(`Wrong password! ${obj.getName()} salary will not be increased!`);
-    }
+    };
 
 	return obj;
 }
@@ -65,8 +65,8 @@ console.log(`${dev2.getName()} salary is ${dev2.getSalary()}`);
 dev1.increaseSalary(500, 'abracadabra');
 dev2.increaseSalary(100, '123');
 
-console.log(`${dev1.getName()} salary after promotion is ${dev1.getSalary()}`);
-console.log(`${dev2.getName()} salary after promotion is ${dev2.getSalary()}`);
+console.log(`${dev1.getName()} salary after promotion is ${dev1.getSalary()}.`);
+console.log(`${dev2.getName()} salary after promotion is ${dev2.getSalary()}.`);
 console.log();
 // -------------------------------- Version 2 example --------------------------------
 let peter = new Person('Peter', 1000);
@@ -78,6 +78,6 @@ console.log(`${maria.getName()} salary is ${maria.getSalary()}`);
 peter.increaseSalary(500, '123');
 maria.increaseSalary(100, 'abracadabra');
 
-console.log(`${peter.getName()} salary after promotion is ${peter.getSalary()}`);
-console.log(`${maria.getName()} salary after promotion is ${maria.getSalary()}`);
+console.log(`${peter.getName()} salary after promotion is ${peter.getSalary()}.`);
+console.log(`${maria.getName()} salary after promotion is ${maria.getSalary()}.`);
 // ----------------------------------------------------------------------------------

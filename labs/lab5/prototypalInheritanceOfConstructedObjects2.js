@@ -5,11 +5,11 @@ var Animal = function(food){
 
 // Version 1
 Animal.prototype.eat = function () {
-    console.log(`${this.name} is eating ${this.food}`);
+    console.log(`${this.name} is eating ${this.food}.`);
 };
 // Version 2
 Animal.prototype = {
-    eat() { console.log(`${this.name} is eating ${this.food}`); }
+    eat() { console.log(`${this.name} is eating ${this.food}.`); }
 };
   
 // Cat constructor
