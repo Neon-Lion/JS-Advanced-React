@@ -10,7 +10,7 @@ const counter = {
 
 // ------------------------------------- Version 1 - Use a wrapping function -------------------------------------
 // ------------------------------------- Version 1.1 -------------------------------------------------------------
-function countdownByOneSec(times) {
+function countdown1(times) {
 	const delay = 1000;
 	let x = function () { counter.tick() };
 	
@@ -20,8 +20,8 @@ function countdownByOneSec(times) {
 	}
 }
 // ------------------------------------- Version 1.2 - The same as version 1.1, but shorter ----------------------
-function countdownByTwoSecs(times) {
-	const delay = 2000;
+function countdown2(times) {
+	const delay = 1000;
 	let counterTick = () => counter.tick();
 	
 	while(times) {
@@ -29,9 +29,26 @@ function countdownByTwoSecs(times) {
 		times--;
 	}
 }
-// ------------------------------------- Version 2 - Use the bind() function -------------------------------------
-function countdownByThreeSecs(times) {
-	const delay = 3000;
+// ------------------------------------- Version 2 - Use the apply() function -------------------------------------
+function countdown3(times) {
+    const delay = 1000;
+    while(times) {
+        setTimeout(function () { counter.tick.apply(counter) }, delay * times);
+		times--;
+	}
+}
+// ------------------------------------- Version 3 - Use the call() function --------------------------------------
+function countdown4(times) {
+    const delay = 1000;
+    while(times) {
+        setTimeout(function () { counter.tick.call(counter) }, delay * times);
+		times--;
+	}
+}
+// ------------------------------------- Version 4 - Use the bind() function -------------------------------------
+// ------------------------------------- Version 4.1 -------------------------------------------------------------
+function countdown5(times) {
+	const delay = 1000;
 	const boundCounterTick = counter.tick.bind(counter);
 	
 	while(times) {
@@ -39,7 +56,19 @@ function countdownByThreeSecs(times) {
 		times--;
 	}
 }
-
-countdownByOneSec(2);
-countdownByTwoSecs(3)
-countdownByThreeSecs(4);
+// ------------------------------------- Version 4.2 -------------------------------------------------------------
+function countdown6(times) {
+	const delay = 1000;
+	
+	while(times) {
+		setTimeout(counter.tick.bind(counter), delay * times);
+		times--;
+	}
+}
+// ---------------------------------------------------------------------------------------------------------------
+countdown1(3);
+countdown2(3)
+countdown3(3);
+countdown4(3);
+countdown5(3);
+countdown6(3);
