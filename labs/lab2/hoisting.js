@@ -1,3 +1,5 @@
+"use strict";
+
 // console.log(x); // Can not access 'x' before initialization
 
 // foo(); // Can not access 'foo' before initialization when using const

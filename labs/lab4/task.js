@@ -1,3 +1,5 @@
+"use strict";
+
 function Constructor() {
 	this.objectsCount = 0;
 
@@ -5,10 +7,11 @@ function Constructor() {
 		that.objectsCount++;
 	};
 
-	this.sayHello = function() {
+	this.sayHello = function () {
 		countObjects(this);
-
-		console.log(`I'm obj ${this.objectsCount}`);
+		if(this.objectsCount === 1)
+			console.log(`I'm new obj.`);
+		console.log(`I'm obj ${this.objectsCount}.`);
 	};
 }
 

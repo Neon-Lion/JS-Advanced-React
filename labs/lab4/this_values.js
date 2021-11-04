@@ -1,3 +1,5 @@
+"use strict";
+
 const userName = "Larry";
 
 function setSalary(newSalary){
@@ -35,16 +37,16 @@ function Constructor(id) {
 	this.id = id;
 	console.log(`this in constructor: ${this}`); // obj1
 
-	this.showID = function() {
+	this.showID = function () {
 		console.log(`ID: ${id}`);
 		console.log(`this in a method: ${this}`);
-	}
+	};
 };
 
 var obj1 = new Constructor(1); // this in constructor: [object Object]
 obj1.showID();  // ID: 1
                 // this in a method: [object Object]
-Constructor.showID();
+// Constructor.showID();
 
 class A {
     method1() {

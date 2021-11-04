@@ -1,7 +1,10 @@
+"use strict";
+
 let tries = 5;
 
 function foo(x) {
 	// x++;
+	console.log(`tries = ${tries}`);
 	console.log(`x = ${x}`);
 	x++;
 	tries--;
@@ -9,8 +12,6 @@ function foo(x) {
 	if (tries) {
 		foo(x);
 	}
-	// foo(5)
-	console.log(`tries = ${tries}`);
 }
 
 foo(1);

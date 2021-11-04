@@ -1,3 +1,5 @@
+"use strict";
+
 // Animal constructor
 var Animal = function(food){
     this.food = food;
@@ -7,10 +9,10 @@ var Animal = function(food){
 Animal.prototype.eat = function () {
     console.log(`${this.name} is eating ${this.food}.`);
 };
-// Version 2
-Animal.prototype = {
-    eat() { console.log(`${this.name} is eating ${this.food}.`); }
-};
+// Version 2 - Not a good way to do that
+// Animal.prototype = {
+//     eat() { console.log(`${this.name} is eating ${this.food}.`); }
+// };
   
 // Cat constructor
 var Cat = function(name, food) {

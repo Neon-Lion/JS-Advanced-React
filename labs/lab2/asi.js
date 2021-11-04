@@ -1,4 +1,6 @@
-let a,b;
+"use strict";
+
+let a, b;
 let foo = function () {
     console.log(`Foo`);
 };

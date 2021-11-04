@@ -1,5 +1,7 @@
+"use strict";
+
 function greet(userName) {
-    return function() { console.log(`Hello, ${userName}!`); }
+    return function () { console.log(`Hello, ${userName}!`); }
 }
 
 setTimeout(function () { console.log('Hello'); }, 2000);

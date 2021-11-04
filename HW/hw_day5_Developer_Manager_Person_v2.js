@@ -1,3 +1,4 @@
+"use strict";
 // --------------------------- Person constructor ---------------------------
 var Person = function(name, age) {
     this.name = name || undefined;

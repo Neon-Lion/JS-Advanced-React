@@ -1,4 +1,4 @@
-// "use strict";
+"use strict";
 
 function foo() {
     let x = 0;
@@ -34,7 +34,7 @@ console.log(student1.id); // 1
 
 // Using string
 let str = "a";
-str.id = 1;
+// str.id = 1;
 console.log(str.id); // undefined or Cannot create property 'id' on string 'a' at Object.<anonymous> when using strict
 
 // Using String object

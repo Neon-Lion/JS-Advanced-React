@@ -1,3 +1,5 @@
+"use strict";
+
 // create 'Car' constructor
 var Car = function(manufacturer, speed){
     this.manufacturer = manufacturer || undefined;
@@ -5,12 +7,12 @@ var Car = function(manufacturer, speed){
 };
 
 Car.prototype = {
-    drive: function(){
+    drive: function () {
         if (this.wings >= 2) {
-            console.log(`Flying with ${this.speed} km/h`);
+            console.log(`Flying with ${this.speed} km/h.`);
         }
         else {
-            console.log(`Driving with ${this.speed} km/h`);
+            console.log(`Driving with ${this.speed} km/h.`);
         }
     }
 };

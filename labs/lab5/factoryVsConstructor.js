@@ -1,3 +1,5 @@
+"use strict";
+
 function CarConstructor(){};
 
 CarConstructor.prototype.sayHello=function () {
@@ -9,7 +11,7 @@ var constructedCar = new CarConstructor();
 constructedCar.sayHello();
 //Hello from CarConstructor.prototype
 
-function CarFactory(){
+function CarFactory() {
   return {}
 };
 

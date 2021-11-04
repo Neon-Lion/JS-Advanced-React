@@ -1,3 +1,5 @@
+"use strict";
+
 // create 'car' object
 var car = {
     manufacturer: undefined,
@@ -25,8 +27,10 @@ var theFordOfPesho = {
     // make 'theFordOfPesho' to inherit from 'ford'
     __proto__ : ford,
     wings: 2,
-    speed: 300,
+    speed: 300
 };
-  
+
+// Use the objects
+car.drive();
 ford.drive();
 theFordOfPesho.drive();

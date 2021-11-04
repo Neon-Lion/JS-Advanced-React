@@ -1,3 +1,5 @@
+"use strict";
+
 let obj = {
 	name : "Joe",
 	"user-age" : 23

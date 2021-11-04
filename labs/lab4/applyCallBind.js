@@ -1,3 +1,5 @@
+"use strict";
+
 function update(name, age){
     this.name = name;
     this.age  = age;

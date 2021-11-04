@@ -1,3 +1,5 @@
+"use strict";
+
 // Automatic Semicolon Insertion
 const lib = 5;
 

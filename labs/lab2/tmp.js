@@ -1,11 +1,12 @@
+"use strict";
 // ---------------------------------------------------------
 let pesho = {
     "name": "Neon-Lion",
     age: 23,
     "a-b": "aaabbb",
     1: "one",
-    2: function() { console.log(`Hi`); },
-    3: function() { return 5; }
+    2: function () { console.log(`Hi`); },
+    3: function () { return 5; }
 }
 
 let arr = ["Pesho", 23, "one"];
@@ -23,7 +24,7 @@ console.log(`res2 = ${res2}`); // res2 = 5
 // let arr1 = [5, 2];
 // let arr2 = new Array(5, 2);
 // console.dir(arr1, arr2);
-const foo = function() { return 5; }
+const foo = function () { return 5; }
 console.dir(foo); // [Function: foo]
 // ---------------------------------------------------------
 let fruits = {
@@ -34,10 +35,10 @@ let fruits = {
 
 console.dir(fruits);
 // ---------------------------------------------------------
-let arr = [1, 2, 1, 1];
-let set = new Set(arr);
+let myArr = [1, 2, 1, 1];
+let set = new Set(myArr);
 let arr2 = new Array(...set);
-console.dir(arr);
+console.dir(myArr);
 console.dir(set);
 console.dir(arr2);
 // ---------------------------------------------------------

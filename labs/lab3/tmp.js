@@ -1,7 +1,9 @@
+"use strict";
+
 var cats = [];
 
 for (let i = 0; i < 3; i++) {
-  cats[i] = function(){
+  cats[i] = function () {
     console.log(`Cat ${i} is ready!`);
   }
 }
@@ -12,7 +14,7 @@ cats[1]();
 cats[2]();
 
 for (var i = 0; i < 3; i++) {
-  cats[i] = function(){
+  cats[i] = function () {
     console.log(`Cat ${i} is ready!`);
   }
 }

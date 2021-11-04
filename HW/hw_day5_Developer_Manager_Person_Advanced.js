@@ -1,5 +1,6 @@
+"use strict";
 // --------------------------- Person constructor ---------------------------
-function Person(name, age){
+function Person(name, age) {
     this.name = name || undefined;
     this.age = age || 0;
 }

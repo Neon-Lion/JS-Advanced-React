@@ -1,11 +1,12 @@
+"use strict";
+
 // const pesho = {
 // 	"name" : "Peter Petrov",
 // 	"age" : 23,
-// 	"sayHello": function() {
+// 	"sayHello": function () {
 // 		console.log(`name: ${this.name}`);
 // 	}
 // }
-
 
 /* ----------------------------- student factory ---------------------------- */
 function Student(name, age) {

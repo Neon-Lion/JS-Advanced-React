@@ -1,3 +1,5 @@
+"use strict";
+
 function caller(callback, x, y) {
     console.log(`I will call your callbackunction`);
     callback(x, y);
