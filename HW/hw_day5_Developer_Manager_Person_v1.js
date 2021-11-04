@@ -12,16 +12,12 @@ Person.prototype.greet = function () {
 function Developer(name, age, skillset) {
     // reuse the Person Constructor
     Person.call(this, name, age);
-    // this.name = name || 'Anonymous';
-    // this.age = age || 0;
     this.skillset = skillset || "none";
 }
 // --------------------------- Manager constructor ---------------------------
 function Manager (name, age, managed) {
     // reuse the Person Constructor
     Person.call(this, name, age);
-    // this.name = name || 'Anonymous';
-    // this.age = age || 0;
     this.managed = managed || "not managed";
 }
 // --------------------------- Inherit from Person.prototype -----------------

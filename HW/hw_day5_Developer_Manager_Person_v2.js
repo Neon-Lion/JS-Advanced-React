@@ -10,8 +10,6 @@ Person.prototype.greet = function () {
 };
 // --------------------------- Developer constructor --------------------------
 var Developer = function(name, age, skillset) {
-    // this.name = name || 'Anonymous';
-    // this.age = age || 0;
     this.skillset = skillset || "none";
 };
 // --------------------------- Manager constructor ---------------------------
