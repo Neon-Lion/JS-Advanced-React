@@ -31,16 +31,19 @@ Developer.prototype.greet = function () {
 };
 // for Manager objects
 Manager.prototype.greet = function () {
+    // Version 1 - using for loop
     console.log(`Hi, I'm ${this.name} and I'm ${this.age} years old.`);
     process.stdout.write(`I manage `);
     for(let i = 0; i < Developer.length - 1; i++) {
-        if(i == Developer.length - 2) {
+        if(i == Developer.length - 2)
             process.stdout.write(`${this.managed[i].name}.\n`);
-        }
-        else {
+        else
             process.stdout.write(`${this.managed[i].name}, `);
-        }
     }
+
+    // Version 2 - using arrow function with the map method
+    console.log(`Hi, I am ${this.name} and I am ${this.age} years old.`);
+    console.log(`I manage ${this.managed.map(e => e.name)}.`);
 };
 // --------------------------- Create Objects -------------------------------
 // Developer instances
