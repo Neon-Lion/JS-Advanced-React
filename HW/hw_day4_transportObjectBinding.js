@@ -41,7 +41,7 @@ function MyConstructor5(data, transport) {
     this.data = data;
     transport.on('data', () => { console.log(this.data); });
 }
-
+// -------------------------------------------------------------------------------------------------------
 // called as
 var foo1 = new MyConstructor('foo1', transport);
 var foo2 = new MyConstructor2('foo2', transport);
