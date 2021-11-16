@@ -15,7 +15,7 @@ let outputUsingFilter = words.filter( word => {
 );
 // --------------------------- Version 2 - using map() method ------------------------------
 console.log(`\nVersion 2 - using map() method`);
-let outputUsingMap1 = words.map( word => {
+let outputUsingMap = words.map( word => {
         // Version 2.1
         if(word.lastIndexOf('t', 0) === 0 && word.length > 2)
             console.log(word)
