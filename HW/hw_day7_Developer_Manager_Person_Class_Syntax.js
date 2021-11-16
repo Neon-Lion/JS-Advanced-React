@@ -26,7 +26,7 @@ class Developer extends Person {
     }
 
     greet() {
-        console.log(`Hi, I'm ${this.name} and I'm ${this.age} years old.`);
+        super.greet();
         console.log(`I know ${this.skillset}.`);
     }
 }
@@ -38,7 +38,7 @@ class Manager extends Person {
     }
 
     greet() {
-        console.log(`Hi, I am ${this.name} and I am ${this.age} years old.`);
+        super.greet();
         console.log(`I manage ${this.managed.map(e => e.name)}.`);
     }
 }
