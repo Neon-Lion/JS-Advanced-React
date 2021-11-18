@@ -4,26 +4,28 @@ let input = "A common mistake that people make when trying to design something c
 let words = input.split(" "); // "words" variable is used in global scope
 // --------------------------- Version 1 - using filter() method ---------------------------
 console.log(`Version 1 - using filter() method`);
-let outputUsingFilter = words.filter( word => {
-        // Version 1.1
-        if(word.lastIndexOf('t', 0) === 0 && word.length > 2)
-            console.log(word)
-        // Version 1.2
-        // if(word.startsWith('t') && word.length > 2)
-        //     console.log(word)
-    }
-);
+
+// Version 1.1
+// let outputUsingFilter = words.filter(word => word.lastIndexOf('t', 0) === 0 && word.length > 2);
+
+// Version 1.2
+let outputUsingFilter = words.filter(word => word.startsWith('t') && word.length > 2);
+
+outputUsingFilter.forEach(word => console.log(word));
 // --------------------------- Version 2 - using map() method ------------------------------
 console.log(`\nVersion 2 - using map() method`);
-let outputUsingMap = words.map( word => {
-        // Version 2.1
-        if(word.lastIndexOf('t', 0) === 0 && word.length > 2)
-            console.log(word)
-        // Version 2.2
-        // if(word.startsWith('t') && word.length > 2)
-        //     console.log(word)
-    }
-);
+
+// Version 2.1
+// let outputUsingMap = words
+//                     .filter(word => word.lastIndexOf('t', 0) === 0 && word.length > 2)
+//                     .map( word => word );
+
+// Version 2.2
+let outputUsingMap = words
+                    .filter(word => word.startsWith('t') && word.length > 2)
+                    .map(word => word);
+
+outputUsingMap.forEach(word => console.log(word) );
 // --------------------------- Version 3 - using forEach method ----------------------------
 console.log(`\nVersion 3 - using forEach method`);
 function words_starting_with_letter(array, letter) {
@@ -31,11 +33,14 @@ function words_starting_with_letter(array, letter) {
 
     words.forEach(word => {
         // Version 3.1
-        if(word.lastIndexOf(letter, 0) === 0 && word.length > 2)
-            console.log(word)
+        // if(word.lastIndexOf(letter, 0) === 0 && word.length > 2) {
+        //     console.log(word);
+        // }
+
         // Version 3.2
-        // if(word.startsWith(letter) && word.length > 2)
-        //     console.log(word)
+        if(word.startsWith(letter) && word.length > 2) {
+            console.log(word);
+        }
     });
 }
 
