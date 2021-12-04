@@ -1,21 +1,5 @@
-// ------------------------------------ The Class Syntax --------------------------------------------------
-// Classes in JS are "special functions" and we can define them using the expression or declaration syntax.
-// All code inside the class construct is automatically interpreted in strict mode.
+"use strict";
 
-// // class declaration
-// class Person {
-//     // method definitions
-// }
-
-// // class expression
-// let Person = class {
-//     // method definitions
-// }
-// ------------------------------------ Constructor -------------------------------------------------------
-// The constructor method is a special method for creating and initializing an object created with a class.
-// It's called automatically whenever a new object is created.
-// There can only be one special method with the name "constructor" in a class.
-// --------------------------------------------------------------------------------------------------------
 class Person {
     _name;
     _age;

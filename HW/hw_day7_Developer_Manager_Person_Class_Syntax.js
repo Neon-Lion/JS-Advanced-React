@@ -1,3 +1,4 @@
+"use strict";
 // --------------------------- class Person ----------------------------------
 class Person {
     constructor(name, age) {
