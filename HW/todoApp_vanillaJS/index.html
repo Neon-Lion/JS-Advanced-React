@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Todo App</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <div class="page">
+            <header>Simple Todo App</header>
+            <main class="todo-app">
+                <div class="alert feedback centerAlign"></div>
+                <div class="todo-add">
+                    <input type="text" autofocus id="todo-input" placeholder="Add new todo ...">
+                    <button class="add-btn" type="button" onclick="addTodo()">Add</button>
+                </div>
+                <ul id="todo-items" class="todo-items"></ul>
+                <div class="todos-total">total items: <span id="todo-output"></span></div>
+            </main>
+        </div>
+    </body>
+    <script src="app.js"></script>
+</html>
