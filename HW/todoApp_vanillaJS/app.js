@@ -103,5 +103,7 @@ function addTodo() {
         
         // Make input field empty
         document.getElementById("todo-input").value = '';
+
+        setTimeOutForAlerts("To do item was added successfully.", "success", 3000);
     }
 }
