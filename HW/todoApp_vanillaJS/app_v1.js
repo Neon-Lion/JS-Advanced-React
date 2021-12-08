@@ -1,14 +1,20 @@
 "use strict";
 
+const dom = {
+    ul:        document.getElementById('todo-items'),
+    input:     document.getElementById("todo-input"),
+    output:    document.getElementById("todo-output"),
+    addButton: document.getElementById("add-btn"),
+    feedback:  document.querySelector('.feedback'),
+};
+
 // setTimeOut for alerts
 function setTimeOutForAlerts(alertMessage, alertType, seconds) {
-    const feedback = document.querySelector('.feedback');
-
-    feedback.innerText = alertMessage;
-    feedback.classList.add('showItem', 'alert-' + alertType);
+    dom.feedback.innerText = alertMessage;
+    dom.feedback.classList.add('showItem', 'alert-' + alertType);
     setTimeout(
         function() {
-            feedback.classList.remove('showItem', 'alert-' + alertType);
+            dom.feedback.classList.remove('showItem', 'alert-' + alertType);
         }, seconds);
 }
 
@@ -20,9 +26,7 @@ function getChildNodeNumbers(parent, child) {
 
 // Creating new task list item
 function createNewTask(task) {
-    const ul     = document.getElementById('todo-items');
-    const output = document.getElementById("todo-output");
-    const text   = document.createTextNode(task);
+    const text = document.createTextNode(task);
    // ------------------------------------------ Create elements ------------------------------------------
     const li   = document.createElement("li"); 
     const span = document.createElement("span");
@@ -52,7 +56,8 @@ function createNewTask(task) {
     li.appendChild(divComplete);
     li.appendChild(divEdit);
     li.appendChild(divRemove);
-    // ------------------------------------------ Event Listeners ------------------------------------------
+    // ------------------------------------------ Event Listeners for Remove, Edit and Complete todo -------
+    // Remove Event Listener
     divRemove.addEventListener("click", (e) => {      
         const item = e.target;
 
@@ -60,18 +65,20 @@ function createNewTask(task) {
             li.classList.add("fade");
             li.parentNode.removeChild(li);
 
-            output.innerText = (getChildNodeNumbers(ul, "li"));
+            dom.output.innerText = (getChildNodeNumbers(dom.ul, "li"));
             
             setTimeOutForAlerts('To do item was deleted successfully.', 'success', 3000);
         }
     });
 
+    // Edit Event Listener
     divEdit.addEventListener("click", () => {
         const editValue = prompt("Edit the selected item", span.innerText);
         span.innerText = editValue;
         setTimeOutForAlerts("To do item was edited successfully.", "success", 3000);
     });
 
+    // Complete Event Listener
     divComplete.addEventListener("click", (e) => {
         const item = e.target;
 
@@ -84,26 +91,35 @@ function createNewTask(task) {
 }
 
 // Add the new list item
-function addTodo() {
-    const ul       = document.getElementById('todo-items');
-    let inputValue = document.getElementById("todo-input").value;
-    const output   = document.getElementById("todo-output");
+const addTodo = function() {
+    const li = createNewTask(dom.input.value);
 
-    const li = createNewTask(inputValue);
-
-    if (inputValue === '') {
+    if (dom.input.value === '') {
         setTimeOutForAlerts('Please enter valid value.', 'danger', 3000);
     }
     else {
         // Append li element as a child to ul tag
-        ul.appendChild(li);
+        dom.ul.appendChild(li);
 
         // Count li elements inside ul
-        output.innerText = getChildNodeNumbers(ul, "li");
+        dom.output.innerText = getChildNodeNumbers(dom.ul, "li");
         
         // Make input field empty
-        document.getElementById("todo-input").value = '';
+        dom.input.value = '';
 
         setTimeOutForAlerts("To do item was added successfully.", "success", 3000);
     }
-}
+};
+
+// ------------------------------------------ Event Listener for Add todo ----------------------------------
+// Add todo if button is clicked
+dom.addButton.addEventListener('click', () => {
+    addTodo();
+});
+
+// Add todo if Enter is pressed
+dom.input.addEventListener('keyup', function(e) {
+	if(e.keyCode === 13) {
+		addTodo();
+	}
+});
