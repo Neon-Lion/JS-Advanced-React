@@ -95,7 +95,7 @@ const removeTodo = function(e) {
 	// Get id of todo to be removed
 	let todoID;
 
-	if(e.target.classList.contains('fa-trash-alt')) {
+	if(e.target.classList.contains("fa-trash-alt")) {
 		todoID = +e.target.parentNode.parentNode.dataset.id;
 	}
 
@@ -105,7 +105,7 @@ const removeTodo = function(e) {
 	// Remove from todos array the element with index index
 	if(index >= 0) {
 		todos.splice(index, 1);
-		setTimeOutForAlerts('To do item was deleted successfully.', 'success', 3000);
+		setTimeOutForAlerts("To do item was deleted successfully.", "success", 3000);
 	}
 
 	// Render todos
@@ -117,7 +117,7 @@ const editTodo = function (e) {
 	// Get id of todo to be edited
 	let todoID
 
-	if(e.target.classList.contains('fa-pencil-alt')) {
+	if(e.target.classList.contains("fa-pencil-alt")) {
 		todoID = +e.target.parentNode.parentNode.dataset.id;
 	}
 
@@ -139,11 +139,11 @@ const editTodo = function (e) {
 }
 
 // Complete Todo Task
-const completeTodo = function(e) {
+const toggleComplete = function(e) {
 	// Get id of todo to be completed
 	let todoID
 
-	if(e.target.classList.contains('fa-check-square')) {
+	if(e.target.classList.contains("fa-check-square")) {
 		todoID = +e.target.parentNode.parentNode.dataset.id;
 	}
 
@@ -161,22 +161,22 @@ const completeTodo = function(e) {
 	}
 };
 
-window.addEventListener( 'DOMContentLoaded', event => { renderTodos() } );
+window.addEventListener( "DOMContentLoaded", event => { renderTodos() } );
 
 // Add Todo Item on button click
-nodes.addTodoBtn.addEventListener('click', addTodo);
+nodes.addTodoBtn.addEventListener("click", addTodo);
 // Add Todo Item on Enter key pressed
-nodes.addTodoInput.addEventListener('keyup', function(e) {
+nodes.addTodoInput.addEventListener("keyup", function(e) {
 	if(e.keyCode === 13) {
 		addTodo();
 	}
 });
 
 // Remove Todo Item:
-nodes.todoListUL.addEventListener('click', removeTodo);
+nodes.todoListUL.addEventListener("click", removeTodo);
 
 // Edit Todo Item
-nodes.todoListUL.addEventListener('click', editTodo);
+nodes.todoListUL.addEventListener("click", editTodo);
 
 // Complete Todo Item
-nodes.todoListUL.addEventListener('click', completeTodo);
+nodes.todoListUL.addEventListener("click", toggleComplete);
