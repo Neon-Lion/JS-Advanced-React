@@ -112,6 +112,7 @@ const removeTodo = function(e) {
 	renderTodos();
 };
 
+// Edit Todo Task
 const editTodo = function (e) {
 	// Get id of todo to be edited
 	let todoID
