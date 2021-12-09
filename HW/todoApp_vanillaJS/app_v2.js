@@ -173,10 +173,10 @@ nodes.addTodoInput.addEventListener('keyup', function(e) {
 });
 
 // Remove Todo Item:
-nodes.todoListUL.addEventListener('click', removeTodo, {capture: true});
+nodes.todoListUL.addEventListener('click', removeTodo);
 
 // Edit Todo Item
-nodes.todoListUL.addEventListener('click', editTodo, {capture: true});
+nodes.todoListUL.addEventListener('click', editTodo);
 
 // Complete Todo Item
-nodes.todoListUL.addEventListener('click', completeTodo, {capture: true});
+nodes.todoListUL.addEventListener('click', completeTodo);
