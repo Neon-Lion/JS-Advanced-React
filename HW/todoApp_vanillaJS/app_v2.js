@@ -130,12 +130,12 @@ const editTodo = function (e) {
 		todo = todos[index];
 		const editValue = prompt("Edit the selected item", todo.title);
 		todo.title = editValue;
+
+		setTimeOutForAlerts("To do item was edited successfully.", "success", 3000);
+
+		// Render todos
+		renderTodos();
 	}
-
-	setTimeOutForAlerts("To do item was edited successfully.", "success", 3000);
-
-	// Render todos
-	renderTodos();
 }
 
 // Complete Todo Task
@@ -155,10 +155,10 @@ const completeTodo = function(e) {
 	if(index != -1) {
 		todo = todos[index];
 		todo.completed = (todo.completed == false) ? true : false;
-	}
 
-	// Render todos
-	renderTodos();
+		// Render todos
+		renderTodos();
+	}
 };
 
 window.addEventListener( 'DOMContentLoaded', event => { renderTodos() } );
