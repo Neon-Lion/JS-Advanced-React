@@ -1,0 +1,11 @@
+body {
+    text-align: center;
+}
+
+.getJoke {
+    width: 300px;
+    height: 50px;
+    color: white;
+    background-color:  rgb(104, 0, 255);;
+    border-radius: 5px;
+}
