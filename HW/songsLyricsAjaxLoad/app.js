@@ -14,7 +14,7 @@ function renderText(data) {
 for(let i = 0; i < dom.images.length; i++)
 {
     dom.images[i].addEventListener('click', () => {
-        let dataURL = `http://127.0.0.1:5500/HW/songsLyricsAjaxLoad/songsTexts/${dom.images[i].name}.txt`;
+        let dataURL = `http://127.0.0.1:5500/HW/songsLyricsAjaxLoad/songsTexts/${dom.images[i].getAttribute("data-name")}.txt`;
         
         fetch(dataURL)
             .then( response => {

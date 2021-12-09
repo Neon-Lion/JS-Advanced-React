@@ -1,10 +1,13 @@
 "use strict";
 
 const dom = {
-    'jokeURL': "https://api.icndb.com/jokes/random",
     'content': document.querySelector('.content'),
     'button':  document.querySelector('.getJoke')
 };
+
+const jokes = {
+    'url': "https://api.icndb.com/jokes/random",
+}
 
 // Get the joke by parsing the JSON string
 function getJoke(joke) {
@@ -33,5 +36,5 @@ function AJAXcall(dataURL, callback) {
 
 // Add Event Listener for the button
 dom.button.addEventListener('click', () => {
-    AJAXcall(dom.jokeURL, getJoke);
+    AJAXcall(jokes.url, getJoke);
 });

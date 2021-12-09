@@ -124,9 +124,12 @@ const editTodo = function (e) {
 	let index = todos.findIndex(todo => todo.id === todoID);
 
 	// Make the todo editable
-	let todo = todos[index];
-	const editValue = prompt("Edit the selected item", todo.title);
-	todo.title = editValue;
+	let todo;
+	if(index != -1) {
+		todo = todos[index];
+		const editValue = prompt("Edit the selected item", todo.title);
+		todo.title = editValue;
+	}
 
 	setTimeOutForAlerts("To do item was edited successfully.", "success", 3000);
 
@@ -147,8 +150,11 @@ const completeTodo = function(e) {
 	let index = todos.findIndex(todo => todo.id === todoID);
 
 	// Make the todo completed
-	let todo = todos[index];
-	todo.completed = (todo.completed == false) ? true : false;
+	let todo;
+	if(index != -1) {
+		todo = todos[index];
+		todo.completed = (todo.completed == false) ? true : false;
+	}
 
 	// Render todos
 	renderTodos();
