@@ -7,12 +7,22 @@ const dom = {
 
 const jokes = {
     'url': "https://api.icndb.com/jokes/random",
+};
+
+const state = {
+    "joke": ""
+};
+
+// Set the HTML contained within the div with class "content"
+function render() {
+    dom.content.innerHTML = state.joke;
 }
 
 // Get the joke by parsing the JSON string
-function getJoke(joke) {
-    const jokeResult = JSON.parse(joke);
-    dom.content.innerHTML = jokeResult.value.joke;
+function changeState(json) {
+    const result = JSON.parse(json);
+    state.joke = result.value.joke;
+    render();
 }
 
 function AJAXcall(dataURL, callback) {
@@ -36,5 +46,5 @@ function AJAXcall(dataURL, callback) {
 
 // Add Event Listener for the button
 dom.button.addEventListener('click', () => {
-    AJAXcall(jokes.url, getJoke);
+    AJAXcall(jokes.url, changeState);
 });
