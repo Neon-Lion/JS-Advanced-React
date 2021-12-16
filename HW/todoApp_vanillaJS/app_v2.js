@@ -25,13 +25,13 @@ function setTimeOutForAlerts(alertMessage, alertType, seconds) {
         }, seconds);
 }
 
-// Display the number of tasks
+// Display the number of todo items
 const displayTodoItemsCount = function() {
 	let count = todos.length || 0;
 	nodes.totalItemsCount.innerText = count;
 };
 
-// Creating new task list item
+// Render todos
 const renderTodos = function(e) {
 	// Clean current todos:
 	nodes.todoListUL.innerHTML = '';
@@ -45,7 +45,7 @@ const renderTodos = function(e) {
             <div class="action-icon edit"><i class="fas fa-pencil-alt"></i></div>
             <div class="action-icon remove"><i class="far fa-trash-alt"></i></div>
         </li>`;
-	})
+	});
 
 	displayTodoItemsCount();
 };
@@ -83,14 +83,14 @@ const addTodo = function() {
 	// Render todos
 	renderTodos();
 
-	// clear input text
+	// Clear input text
 	nodes.addTodoInput.value = '';
 
-	// focus on input for new todo
+	// Focus on input for new todo
 	nodes.addTodoInput.focus();
 };
 
-// Remove Todo Task
+// Remove Todo Item
 const removeTodo = function(e) {
 	// Get id of todo to be removed
 	let todoID;
@@ -112,7 +112,7 @@ const removeTodo = function(e) {
 	renderTodos();
 };
 
-// Edit Todo Task
+// Edit Todo Item
 const editTodo = function (e) {
 	// Get id of todo to be edited
 	let todoID
@@ -138,7 +138,7 @@ const editTodo = function (e) {
 	}
 }
 
-// Complete Todo Task
+// Toggle completed/uncompleted Todo Item
 const toggleComplete = function(e) {
 	// Get id of todo to be completed
 	let todoID
